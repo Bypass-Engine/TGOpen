@@ -8,3 +8,6 @@
 Проект вдохновлен:
 - https://getoutline.org
 - https://github.com/developers-against-repressions/devs-against-the-machine
+
+## P.S.
+Код написан любителями-энтузиастами под лицензией MIT, в свободное время будет допиливаться, PR приветствуются.
