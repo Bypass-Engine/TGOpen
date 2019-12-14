@@ -13,7 +13,7 @@ import (
 
 const (
 	pathService = "/etc/systemd/system/TGOpen-Server.service"
-	serverUrl   = ""
+	serverUrl   = "https://git.io/JeQLA"
 )
 
 func cmd(cmd string) string {
