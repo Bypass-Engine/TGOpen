@@ -19,7 +19,7 @@ import (
 )
 
 const (
-  serverPort = 1337
+	serverPort = 1337
 	version    = 00000000
 )
 
