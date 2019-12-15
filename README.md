@@ -9,5 +9,14 @@
 - https://getoutline.org
 - https://github.com/developers-against-repressions/devs-against-the-machine
 
+## Использование
+1. Перейти к боту по ссылке [@TGOpen_bot](https://telega.one/TGOpen_bot)
+2. Следовать инструкциям, которые предлагает бот.
+
+Если возникли вопросы [@TGOpen_support](https://telega.one/TGOpen_support)
+
+## Возможные баги
+Присвоение заблокированного IP-адреса (не подключается к созданному прокси), если так произошло напишите [@TGOpen_support](https://telega.one/TGOpen_support).
+
 ## P.S.
 Код написан любителями-энтузиастами под лицензией MIT, в свободное время будет допиливаться, PR приветствуются.
