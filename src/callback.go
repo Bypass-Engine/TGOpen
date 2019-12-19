@@ -14,9 +14,9 @@ import (
 
 const (
 	callbackUrl  = "https://tgopen.appspot.com/callback"
-	clientId     = "87def29bbdeaa1ee80a74f8c348147d287783977e8d528c7a8bbef9efcb061c9"
-	clientSecret = "4dfbd2e0ae1a4922a77987f7cce52cb65f85d8e1b587c5a4a2772d3fb812bee4"
-	dbConfig     = "admin_tgopen:51anJCqKHeIDztL7@tcp(127.0.0.1:3306)/admin_tgopen"
+	clientId     = ""
+	clientSecret = ""
+	dbConfig     = ""
 )
 
 var (
