@@ -9,13 +9,14 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"time"
 )
 
 const (
-	callbackUrl  = ""
-	clientId     = ""
-	clientSecret = ""
-	dbConfig     = ""
+	callbackUrl  = "https://tgopen.appspot.com/callback"
+	clientId     = "87def29bbdeaa1ee80a74f8c348147d287783977e8d528c7a8bbef9efcb061c9"
+	clientSecret = "4dfbd2e0ae1a4922a77987f7cce52cb65f85d8e1b587c5a4a2772d3fb812bee4"
+	dbConfig     = "admin_tgopen:51anJCqKHeIDztL7@tcp(127.0.0.1:3306)/admin_tgopen"
 )
 
 var (
@@ -32,7 +33,7 @@ func callback(_ http.ResponseWriter, r *http.Request) {
 	if r.URL.Query()["code"] != nil && r.URL.Query()["state"] != nil {
 		token := r.URL.Query()["state"][0]
 
-		digitalocean, _ := json.Marshal(map[string]string{
+		do, _ := json.Marshal(map[string]string{
 			"grant_type":    "authorization_code",
 			"code":          r.URL.Query()["code"][0],
 			"client_id":     clientId,
@@ -42,7 +43,7 @@ func callback(_ http.ResponseWriter, r *http.Request) {
 			"state":         token,
 		})
 
-		res, err := http.Post("https://cloud.digitalocean.com/v1/oauth/token", "application/json", bytes.NewBuffer(digitalocean))
+		res, err := http.Post("https://cloud.digitalocean.com/v1/oauth/token", "application/json", bytes.NewBuffer(do))
 		if err != nil {
 			log.Println(err)
 			return
@@ -75,6 +76,9 @@ func main() {
 	}
 
 	defer db.Close()
+
+	db.SetMaxIdleConns(0)
+	db.SetConnMaxLifetime(time.Second)
 
 	http.HandleFunc("/callback", callback)
 
