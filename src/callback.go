@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	callbackUrl  = "https://tgopen.appspot.com/callback"
+	callbackUrl  = ""
 	clientId     = ""
 	clientSecret = ""
 	dbConfig     = ""
